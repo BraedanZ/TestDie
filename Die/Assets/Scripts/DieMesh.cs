@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DieMesh : MonoBehaviour
 {
+    private Material[] materials = new Material[6];
     private Vector3[] vertices = new Vector3[8];
     private Vector2[] uv = new Vector2[8];
     // private Vector2[] uv1 = new Vector2[4];
@@ -17,6 +18,7 @@ public class DieMesh : MonoBehaviour
 
     private GameObject meshObject;
     private Mesh mesh;
+    
 
     void Start()
     {
@@ -32,6 +34,9 @@ public class DieMesh : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
+
+        mesh.subMeshCount = 6;
+
     }
 
     private void GenerateMeshData() {
